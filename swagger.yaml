@@ -31,7 +31,7 @@ schemes:
 produces:
 - application/json
 security:
-- access_token: []
+- Bearer: []
 paths:
 # ---- AUTHENTICATION
   /oauth2/token#User:
@@ -357,7 +357,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - User
@@ -443,7 +443,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/granted_applications/{client_id}:
     delete:
       tags:
@@ -472,7 +472,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/enterprise_profile:
     get:
       tags:
@@ -500,7 +500,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/groups:
     get:
       tags:
@@ -532,7 +532,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - User
@@ -587,7 +587,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/room:
     get:
       tags:
@@ -615,7 +615,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     post:
       tags:
       - User
@@ -648,7 +648,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - User
@@ -681,7 +681,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/personal_meeting:
     get:
       tags:
@@ -709,7 +709,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - User
@@ -742,7 +742,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{userId}/tags:
     get:
       tags:
@@ -770,7 +770,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - User
@@ -813,7 +813,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/profile_picture/upload:
     post:
       tags:
@@ -922,7 +922,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     post:
       tags:
       - Enterprise
@@ -967,7 +967,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/enterprise/{enterprise_id}/users/export:
     get:
       tags:
@@ -997,7 +997,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/enterprise/{enterprise_id}/users/{user_id}:
     delete:
       tags:
@@ -1026,7 +1026,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/enterprise/{enterpriseId}/tags:
     get:
       tags:
@@ -1054,7 +1054,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - Enterprise
@@ -1094,7 +1094,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
 # ---- MEETINGS
   /v1/user/{user_id}/scheduled_meeting:
     get:
@@ -1132,7 +1132,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     post:
       tags:
       - Meeting
@@ -1175,7 +1175,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/scheduled_meeting/{meeting_id}:
     get:
       tags:
@@ -1208,7 +1208,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - Meeting
@@ -1246,7 +1246,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     delete:
       tags:
       - Meeting
@@ -1286,7 +1286,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/scheduled_meeting/{meeting_id}/emails:
     get:
       tags:
@@ -1345,7 +1345,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meetings/{meeting_id}/numbers:
     get:
       tags:
@@ -1400,7 +1400,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}:
     get:
       tags:
@@ -1437,7 +1437,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - Meeting
@@ -1484,7 +1484,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/endpoints:
     get:
       tags:
@@ -1521,7 +1521,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - Meeting
@@ -1574,7 +1574,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/endpoints/{endpoint_guid}:
     get:
       tags:
@@ -1621,7 +1621,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - Meeting
@@ -1698,7 +1698,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/endpoints/{endpoint_guid}/layout:
     get:
       tags:
@@ -1740,7 +1740,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - Meeting
@@ -1788,7 +1788,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/pairing_code/SIP:
     post:
       tags:
@@ -1852,7 +1852,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/pairing_code/webrtc:
     post:
       tags:
@@ -1915,7 +1915,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/pairing_code/PSTN:
     post:
       tags:
@@ -1979,7 +1979,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/dialout/pstn:
     post:
       tags:
@@ -2021,7 +2021,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/invite:
     post:
       tags:
@@ -2059,7 +2059,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history:
     get:
       tags:
@@ -2133,7 +2133,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/enterprise/{enterprise_id}/meeting_history:
     get:
       tags:
@@ -2195,7 +2195,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
 # ---- RECORDINGS
   /v1/user/{user_id}/meeting_history/recordings:
     get:
@@ -2260,7 +2260,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history/recordings/{recordingId}:
     get:
       tags:
@@ -2293,7 +2293,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history/{meeting_guid}:
     get:
       tags:
@@ -2326,7 +2326,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/enterprise/{enterprise_id}/meeting_history/{meeting_guid}:
     get:
       tags:
@@ -2359,7 +2359,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history/{meeting_guid}/sharing:
     get:
       tags:
@@ -2394,7 +2394,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/live_meetings/{meeting_id}/recordings:
     post:
       tags:
@@ -2431,7 +2431,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     put:
       tags:
       - Recording
@@ -2467,7 +2467,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history/{meeting_id}/recordings:
     get:
       tags:
@@ -2505,7 +2505,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history/{meeting_guid}/recordings/:
     delete:
       tags:
@@ -2539,7 +2539,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history/{meeting_guid}/recordings/{recording_chapter_id}/:
     delete:
       tags:
@@ -2577,7 +2577,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history/{meetingGuid}/sharing/:
     get:
       tags:
@@ -2612,7 +2612,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     post:
       tags:
       - Recording
@@ -2651,7 +2651,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     delete:
       tags:
       - Recording
@@ -2679,7 +2679,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history/{meetingGuid}/sharing/{sharingId}:
     put:
       tags:
@@ -2724,7 +2724,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/cms/{content_id}:
     get:
       tags:
@@ -2785,7 +2785,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/meeting_history/move_recordings/from_user/{originalOwner}/to_user/{newOwner}:
     post:
       tags:
@@ -2825,7 +2825,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
 # ---- COMMAND CENTER
   /v1/enterprise/{enterprise_id}/indigo/meetings/live:
     get:
@@ -2860,7 +2860,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v1/enterprise/{enterprise_id}/indigo/meetings/live/{meeting_uuid}/endpoints/:
     get:
@@ -2900,7 +2900,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v1/enterprise/{enterprise_id}/indigo/meetings:
     get:
@@ -2955,7 +2955,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v1/user/{user_id}/indigo/meetings:
     get:
@@ -2995,7 +2995,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v1/enterprise/{enterprise_id}/indigo/meetings/{meeting_uuid}:
     get:
@@ -3040,7 +3040,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v1/user/{user_id}/indigo/meetings/{meeting_uuid}:
     get:
@@ -3080,7 +3080,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v2/enterprise/{enterprise_id}/indigo/analytics/meetings/summary:
     get:
@@ -3120,7 +3120,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v2/enterprise/{enterprise_id}/indigo/analytics/users/active:
     get:
@@ -3171,7 +3171,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v2/enterprise/{enterprise_id}/indigo/analytics/endpoints/location/countries:
     get:
@@ -3223,7 +3223,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v2/enterprise/{enterprise_id}/indigo/analytics/users/usage:
     get:
@@ -3263,7 +3263,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v2/enterprise/{enterprise_id}/indigo/analytics/endpoints/distribution_new:
     get:
@@ -3303,7 +3303,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v2/enterprise/{enterprise_id}/indigo/analytics/meetings/usage:
     get:
@@ -3349,7 +3349,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v2/enterprise/{enterprise_id}/indigo/analytics/roi_ranges:
     get:
@@ -3389,7 +3389,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v2/enterprise/{enterprise_id}/indigo/feedback/count:
     get:
@@ -3436,7 +3436,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v2/enterprise/{enterprise_id}/indigo/analytics/feedback/comments:
     get:
@@ -3481,7 +3481,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
 # --> Deprecated Command Center
   /v1/enterprise/{enterprise_id}/indigo/analytics/meetings/usage:
@@ -3523,7 +3523,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v1/enterprise/{enterprise_id}/indigo/analytics/users/usage:
     get:
@@ -3558,7 +3558,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
 
   /v1/enterprise/{enterprise_id}/indigo/analytics/endpoints/distribution:
@@ -3594,7 +3594,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v1/enterprise/{enterprise_id}/indigo/analytics/roi_ranges:
     get:
@@ -3629,7 +3629,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
   /v1/enterprise/{enterprise_id}/indigo/feedback/count:
     get:
@@ -3670,7 +3670,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
 
   /v1/enterprise/{enterprise_id}/indigo/analytics/feedback/comments:
@@ -3712,7 +3712,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
       deprecated: true
 # ---- APPLICATIONS
   /v1/user/{user_id}/developer_applications:
@@ -3744,7 +3744,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
     post:
       tags:
       - Application
@@ -3779,7 +3779,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/developer_applications/{client_id}:
     put:
       tags:
@@ -3820,7 +3820,7 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
   /v1/user/{user_id}/developer_applications/{client_id}/secret:
     put:
       tags:
@@ -3855,12 +3855,21 @@ paths:
           responseSchema:
             $ref: '#/definitions/Error'
       security:
-      - access_token: []
+      - Bearer: []
 securityDefinitions:
-  access_token:
+  Bearer:
     type: apiKey
-    name: access_token
-    in: query
+    name: Authorization
+    in: header
+    description: >
+      To authorize this web session, follow these steps to enter an <b>access token</b> into the field below:
+      <ol>
+        <li>Type the word <b>Bearer</b> followed by a space, and</li>
+        <li>The <b>access token</b> you received</li>
+      </ol>
+      <hr>
+      <i>For example:</i>  <span style="background-color:#fcdbdb" >Bearer</span> <span style="background-color:#fcdbdb">  343a4321bf123...</span>
+      <hr>
 definitions:
   MeetingSummaryInfo:
     type: object
