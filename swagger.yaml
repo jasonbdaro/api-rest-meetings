@@ -340,7 +340,7 @@ paths:
       parameters:
       - name: user_id
         in: path
-        description: The ID of the user of interest. This value is an integer which can be retrieved for the current user via the Get User Account Details endpoint.
+        description: The ID of the user of interest. This value is an integer which can be retrieved for the current user via the search for user in enterprise API.
         required: true
         type: integer
       responses:
@@ -402,7 +402,7 @@ paths:
         description: The user details that you wish to update.
         required: true
         schema:
-          $ref: '#/definitions/User'
+          $ref: '#/definitions/Userupdate'
       responses:
         200:
           description: The settings for the user
@@ -727,7 +727,7 @@ paths:
         description: The user's personal meeting room details that you wish to update.
         required: true
         schema:
-          $ref: '#/definitions/PersonalMeetingRoom'
+          $ref: '#/definitions/PersonalMeetingRoomUpdate'
       responses:
         200:
           description: The settings for the meeting.
@@ -4483,6 +4483,70 @@ definitions:
       channel_id: 2
       username: username
       howDidYouHear: howDidYouHear
+  Userupdate:
+    type: object
+    properties:
+      username:
+        type: string
+        description: User's username
+      firstName:
+        type: string
+        description: User's first name
+      middleName:
+        type: string
+        description: User's middle name
+      lastName:
+        type: string
+        description: User's last name
+      emailId:
+        type: string
+        description: User's email address
+      company:
+        type: string
+        description: User's company name
+      title:
+        type: string
+        description: User's title
+      phone:
+        type: string
+        description: User's phone
+      timezone:
+        type: string
+        description: User's timezone
+      timeFormat:
+        type: integer
+        description: User's preference of 12 or 24 hour time display
+      language:
+        type: string
+        description: User's language code, e.g., "en"
+      defaultEndpoint:
+        type: string
+        description: Default type of client user attends meetings
+      passwordChangeRequired:
+        type: boolean
+        description: Force user to change their password on next login
+      optOutOffers:
+        type: boolean
+        description: Do not include in Product Offerings
+      optOutNews:
+        type: boolean
+    description: 2/5/2018 -- JSON object containing the BlueJeans' user profile fields
+    example:
+      firstName: firstName
+      middleName: middleName
+      lastName: lastName
+      username: username
+      emailId: emailId
+      title: title
+      company: company
+      phone: phone
+      timeFormat: 6
+      optOutOffers: true
+      passwordChangeRequired: true
+      optOutNews: true
+      timezone: timezone
+      language: language
+      defaultEndpoint: defaultEndpoint
   Enterprise:
     type: object
     properties:
@@ -6738,6 +6802,152 @@ definitions:
       status: status
       nextEnd: 7
       isPersonalMeeting: true
+  PersonalMeetingRoomUpdate:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: This is a unique number that is associated with the personal meeting room.
+      uuid:
+        type: string
+        description: This is a unique guid used in BlueJeans cloud that is associated with the personal meeting room.
+      title:
+        type: string
+        description: This is the name associated with personal room.
+      description:
+        type: string
+        description: This is a short descriptive text for the personal meeting room.
+      start:
+        type: integer
+        format: int64
+        description: This is the epoch-based starting time (in milliseconds) of the personal meeting.
+      end:
+        type: integer
+        format: int64
+        description: This is the epoch-based ending time (in milliseconds) of the personal meeting.
+      timezone:
+        type: string
+        description: This is the unix timezone string describing the timezone for the meeting
+      advancedMeetingOptions:
+        $ref: '#/definitions/PersonalMeetingRoom_advancedMeetingOptions'
+      notificationUrl:
+        type: string
+        description: this property is not used in the BlueJeans Meetings product
+      notificationData:
+        type: string
+        description: this property is not used in the BlueJeans Meetings product
+      moderator:
+        $ref: '#/definitions/PersonalMeetingRoom_moderator'
+      numericMeetingId:
+        type: string
+        description: This is the number that a participant would enter when joining this meeting.
+      attendeePasscode:
+        type: string
+        description: This is a passcode that must be provided by people joining the meeting.
+      addAttendeePasscode:
+        type: boolean
+        description: If set, causes BlueJeans to require participants to enter a passcode in order to join the meeting.
+      deleted:
+        type: boolean
+        description: If set, indicates that this meeting has been deleted.
+      allow720p:
+        type: boolean
+        description: If set allows clients to send and receive 720p video resolution.
+      status:
+        type: string
+        description: This string indicates the meeting's operational status.
+      locked:
+        type: boolean
+        description: If set the meeting has been locked, and future attendees require a member to allow them to join.
+      sequenceNumber:
+        type: integer
+        description: Internal tracking number
+      icsUid:
+        type: string
+        description: Internal tracking number
+      endPointType:
+        type: string
+        description: This string is the name of the type of scheduling entity.
+        default: WEB_APP
+      endPointVersion:
+        type: string
+        description: This is a string that describes the version number of the endpoint type.
+      attendees:
+        type: array
+        items:
+          $ref: '#/definitions/PersonalMeetingRoom_attendees'
+      isLargeMeeting:
+        type: boolean
+        description: If set indicates that this meeting will have a large
+      created:
+        type: integer
+        format: int64
+        description: This is the date and time (in milliseconds) when the meeting was created.
+        readOnly: true
+      lastModified:
+        type: integer
+        format: int64
+        description: This is the date and time (in milliseconds) when the meeting was last changed.
+        readOnly: true
+      isExpired:
+        type: boolean
+        description: If set indicates that the meeting has expired.
+      parentMeetingId:
+        type: integer
+        description: This is a unique number associated with the first meeting in a series of meetings.
+      parentMeetingUUID:
+        type: string
+        description: This is the guid for the first meeting in a series of meetings.
+      nextOccurrence:
+        type: integer
+        description: This is a unique number associated with the next in a chain of meetings.
+      timelessMeeting:
+        type: boolean
+        description: This field, if set, indicates that this meeting is continously running.
+      endlessMeeting:
+        type: boolean
+        description: This field, if set, indicates that there is no end of recurring meetings.
+      first:
+        $ref: '#/definitions/PersonalMeetingRoom_first'
+      last:
+        $ref: '#/definitions/PersonalMeetingRoom_last'
+      next:
+        $ref: '#/definitions/PersonalMeetingRoom_next'
+      nextStart:
+        type: integer
+        format: int64
+        description: This is the epoch-based starting time for the next in chain of meetings.
+      nextEnd:
+        type: integer
+        format: int64
+        description: This is the epoch-based ending time for the next in chain of meetings.
+      isPersonalMeeting:
+        type: boolean
+        description: if set, indicates that this ia personal meeting.
+      inviteeJoinOption:
+        type: integer
+        description: How Invitee should join
+    example:   
+      timezone: timezone
+      description: description
+      timelessMeeting: true
+      title: title
+      endlessMeeting: true
+      addAttendeePasscode: true
+      advancedMeetingOptions:
+        publishMeeting: true
+        autoRecord: true
+        videoBestFit: true
+        disallowChat: true
+        encryptionType: NO_ENCRYPTION
+        muteParticipantsOnEntry: true
+        moderatorLess: true
+        allowStream: true
+        showAllAttendeesInMeetingInvite: true
+      locked: true
+      attendeePasscode: attendeePasscode
+      numericMeetingId: numericMeetingId
+      allow720p: true
   MeetingDeprecated:
     type: object
     required:
