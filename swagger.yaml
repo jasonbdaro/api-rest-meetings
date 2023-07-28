@@ -1490,7 +1490,7 @@ paths:
       tags:
       - Meeting
       summary: List Meeting Endpoints
-      description: This endpoint returns an array of all endpoints in the current meeting.  Can use either of a general or meeting access token.
+      description: For getting the live meeting endpoint details, refer https://docs.bluejeans.com/Techdocs/Live_and_Past_End_Point.htm.<br /><br /><br />This endpoint returns an array of all endpoints in the current meeting.  Can use either of a general or meeting access token.
       operationId: getMeetingEndpoints
       parameters:
       - name: user_id
@@ -1522,6 +1522,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
       - Bearer: []
+      deprecated: true
     put:
       tags:
       - Meeting
@@ -1575,12 +1576,13 @@ paths:
             $ref: '#/definitions/Error'
       security:
       - Bearer: []
+      deprecated: true
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/endpoints/{endpoint_guid}:
     get:
       tags:
       - Meeting
       summary: Get Endpoint Information
-      description: This endpoint allows you to retrieve information about an endpoint in the meeting.  Can use either of a general or meeting access token.
+      description: For getting the live meeting endpoint details, refer https://docs.bluejeans.com/Techdocs/Live_and_Past_End_Point.htm.<br /><br /><br />This endpoint allows you to retrieve information about an endpoint in the meeting.  Can use either of a general or meeting access token.
       operationId: getMeetingEndpoint
       parameters:
       - name: user_id
@@ -1622,6 +1624,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
       - Bearer: []
+      deprecated: true
     put:
       tags:
       - Meeting
@@ -1699,6 +1702,7 @@ paths:
             $ref: '#/definitions/Error'
       security:
       - Bearer: []
+      deprecated: true
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/endpoints/{endpoint_guid}/layout:
     get:
       tags:
