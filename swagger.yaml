@@ -1576,7 +1576,6 @@ paths:
             $ref: '#/definitions/Error'
       security:
       - Bearer: []
-      deprecated: true
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/endpoints/{endpoint_guid}:
     get:
       tags:
@@ -1702,7 +1701,6 @@ paths:
             $ref: '#/definitions/Error'
       security:
       - Bearer: []
-      deprecated: true
   /v1/user/{user_id}/live_meetings/{numeric_meeting_id}/endpoints/{endpoint_guid}/layout:
     get:
       tags:
